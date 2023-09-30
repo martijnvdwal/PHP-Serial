@@ -1,11 +1,11 @@
 {
-    "name": "hyperthese/php-serial",
+    "name": "martijnvdwal/php-serial",
     "description": "Multi-platform serial port access convenience class",
     "license": "GNU GPLv2",
     "authors": [
         {
-            "name": "Rémy Sanchez",
-            "email": "remy.sanchez@hyperthese.net"
+            "name": "Martijn van der wal",
+            "email": ""
         }
     ],
     "minimum-stability": "stable",
