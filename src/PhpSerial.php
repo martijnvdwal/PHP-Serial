@@ -9,6 +9,7 @@ define ("SERIAL_DEVICE_OPENED", 2);
  * THIS PROGRAM COMES WITH ABSOLUTELY NO WARRANTIES !
  * USE IT AT YOUR OWN RISKS !
  *
+ * @author Martijn van der Wal
  * @author Rémy Sanchez <remy.sanchez@hyperthese.net>
  * @author Rizwan Kassim <rizwank@geekymedia.com>
  * @thanks Aurélien Derouineau for finding how to open serial ports with windows
