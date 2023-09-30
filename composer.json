@@ -17,13 +17,4 @@
             "dev-develop": "1.0.x-dev"
         }
     }
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/martijnvdwal/php-serial.git"
-        }
-    ],
-    "require": {
-        "php-serial": "dev-php-8-fix"
-    }
 }
