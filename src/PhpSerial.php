@@ -85,48 +85,8 @@ class PhpSerial
      */
     public function deviceSet($device)
     {
-        if ($this->_dState !== SERIAL_DEVICE_OPENED) {
-            if ($this->_os === "linux") {
-                if (preg_match("@^COM(\\d+):?$@i", $device, $matches)) {
-                    $device = "/dev/ttyS" . ($matches[1] - 1);
-                }
-
-                if ($this->_exec("stty -F " . $device) === 0) {
-                    $this->_device = $device;
-                    $this->_dState = SERIAL_DEVICE_SET;
-
-                    return true;
-                }
-            } elseif ($this->_os === "osx") {
-                if ($this->_exec("stty -f " . $device) === 0) {
-                    $this->_device = $device;
-                    $this->_dState = SERIAL_DEVICE_SET;
-
-                    return true;
-                }
-            } elseif ($this->_os === "windows") {
-                if (preg_match("@^COM(\\d+):?$@i", $device, $matches)
-                        and $this->_exec(
-                            exec("mode " . $device . " xon=on BAUD=9600")
-                        ) === 0
-                ) {
-                    $this->_winDevice = "COM" . $matches[1];
-                    $this->_device = "\\.com" . $matches[1];
-                    $this->_dState = SERIAL_DEVICE_SET;
-
-                    return true;
-                }
-            }
-
-            trigger_error("Specified serial port is not valid", E_USER_WARNING);
-
-            return false;
-        } else {
-            trigger_error("You must close your device before to set an other " .
-                          "one", E_USER_WARNING);
-
-            return false;
-        }
+        $this->_device = $device;
+        $this->_dState = SERIAL_DEVICE_SET;
     }
 
     /**
